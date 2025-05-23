@@ -1,0 +1,50 @@
+const mongoose = require('mongoose');
+
+const dbURL = "mongodb+srv://jatwalh:U1GG69XbLdQVSYFO@cluster0.pcktxrd.mongodb.net/test"
+
+mongoose.connect(dbURL)
+.then(()=>{
+    console.log('Connected to MongoDB Atlas');
+}).catch((err)=>{
+    console.log('Connection to DB failed', err);
+});
+
+module.exports = dbURL;
+
+
+
+
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const bodyParse = require("body-parser");
+const path = require('path');
+const cookieParser = require('cookie-parser');
+require("./config/db");
+app.use(express.json());
+app.use(cors());
+app.use(bodyParse.json());
+app.use(bodyParse.urlencoded({ extended: true }));
+
+app.use(cookieParser());
+
+const userRouter = require("./router/user.router");
+app.use("/user", userRouter);
+
+
+
+module.exports = app;
+
+
+
+
+const app = require("./app");
+const http = require('http');
+require("./config/db")
+
+const myServer = http.createServer(app)
+
+const PORT = 3000;
+myServer.listen(PORT, () => {
+  console.log(`🚀 Server is running at http://localhost:${PORT}`);
+});
