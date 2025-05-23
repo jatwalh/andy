@@ -1,0 +1,22 @@
+{
+  "name": "pract",
+  "version": "1.0.0",
+  "description": "it is just a practice project first using with mongo local db vs code extenions later then with actual mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "himanshu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.0",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7"
+  }
+}
