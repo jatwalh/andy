@@ -15,6 +15,11 @@ app.use(cookieParser());
 const userRouter = require("./router/user.router");
 app.use("/user", userRouter);
 
+const prodRouter = require("./router/product/product.router");
+app.use("/product", prodRouter);
+// app.use("/product", ()=>{
+//     console.log("srdfgyuio")
+// });
 
 
 module.exports = app;
