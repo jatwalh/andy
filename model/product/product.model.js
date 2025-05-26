@@ -30,13 +30,23 @@ const ProdSchema = new mongoose.Schema({
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'userSchema',
         required: [true, "User ID is required"]
     },
-    // image: {
-    //     type: String, // Store image filename or URL
-    //     // required: [true, "Product image is required"]
-    // },
+    image: {
+        type: String,
+    },
+
+    orderID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Order',
+        required: [true, "Order ID is required"]
+
+    },
+
+    images: [{
+        type: String
+    }],
     createdAt: {
         type: Date,
         default: Date.now

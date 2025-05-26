@@ -17,9 +17,8 @@ app.use("/user", userRouter);
 
 const prodRouter = require("./router/product/product.router");
 app.use("/product", prodRouter);
-// app.use("/product", ()=>{
-//     console.log("srdfgyuio")
-// });
-
+ 
+const orderRouter = require("./router/orders/orders.router");
+app.use("/orders", orderRouter);
 
 module.exports = app;
