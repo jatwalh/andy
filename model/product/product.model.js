@@ -36,14 +36,12 @@ const ProdSchema = new mongoose.Schema({
     image: {
         type: String,
     },
-
     orderID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Order',
         required: [true, "Order ID is required"]
 
     },
-
     images: [{
         type: String
     }],
